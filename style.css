@@ -1,0 +1,64 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.musicContainer {
+  flex: 0 1 30%;
+  height: 70vh;
+  border: 1px solid green;
+  display: flex;
+  flex-flow: column;
+}
+.musicBanner {
+  background-image: url("images/audio-device-macro-55800.jpg");
+  height: 60%;
+  border: 1px solid greenyellow;
+  margin: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+.musicBanner img {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+.song-title {
+  text-align: center;
+  padding: 0.4em;
+  text-transform: capitalize;
+}
+.song-artist {
+  text-align: center;
+  padding: 0.4em;
+  text-transform: uppercase;
+}
+.controlPad {
+  display: flex;
+  height: 30%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  margin: 0.5em;
+  height: 2.5em;
+}
+.prev,
+.next {
+  background-color: yellow;
+  border: 1px solid green;
+}
+.play-pause {
+  background-color: green;
+  border: 1px solid brown;
+}
+.stop {
+  background-color: red;
+  border: 1px solid brown;
+}
