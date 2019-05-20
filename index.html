@@ -17,32 +17,28 @@
     <div class="wrapper">
       <div class="musicContainer" id="musicContainer">
         <div class="musicBanner" id="musicBanner">
-          <div class="song-details">
-            <div class="song-title" id="song-title"><h2></h2></div>
+          <div class="overlay"></div>
+          <div class="song-details" id="song-details">
+            <div class="song-title" id="song-title"></div>
             <div class="song-artist" id="song-artist"></div>
           </div>
         </div>
+        <div class="control-and-range">
         <div class="controlPad" id="controlPad">
           <div class="musicRange">
-            <input
-              type="range"
-              name="song-range"
-              id="song-range"
-              value="0"
-              min="0"
-              max="100"
-            />
+            <input type="range" name="song-range" id="song-range" value="0" min="0" max="100"/>
           </div>
-          <button class="prev" id="prev">
-            <i class="fas fa-step-backward"></i>
-          </button>
-          <button class="play-pause fas fa-play" id="play-pause"></button>
-          <button class="stop" id="stop"><i class="fas fa-stop"></i></button>
-          <button class="next" id="next">
-            <i class="fas fa-step-forward"></i>
-          </button>
-          <button class="shuffle" id="shuffle">Shuffle</button>
+          <div class="theButtons">
+            <button class="stop fas fa-stop" id="stop" title="Stop"></button>
+            <button class="shuffle fas fa-random" id="shuffle" title="Shuffle"></button>
+            <button class="prev fas fa-step-backward" id="prev" title="Previous"></button>
+            <button class="play-pause fas fa-play" id="play-pause"></button>
+            <button class="next fas fa-step-forward" id="next" title="Next"></button>
+            <button class="repeat fas fa-redo-alt" id="repeat" title="Repeat"></button>
+            <button class="repeat fas fa-list" id="more" title="more"></button>
+          </div>
         </div>
+      </div>
       </div>
     </div>
 
