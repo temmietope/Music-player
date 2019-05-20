@@ -7,14 +7,18 @@
   align-items: center;
 }
 .musicContainer {
-  flex: 0 1 30%;
-  height: 70vh;
+  flex: 0 1 50%;
+  height: 80vh;
   border: 1px solid green;
   display: flex;
   flex-flow: column;
 }
 .musicBanner {
   background-image: url("images/audio-device-macro-55800.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 60%;
   border: 1px solid greenyellow;
   margin: 1em;
@@ -22,21 +26,47 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-end;
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .musicBanner img {
   width: 100%;
-  height: 500px;
+  max-height: 100%;
   position: relative;
 }
+.overlay {
+  position: relative;
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(244, 244, 244, 0.596);
+}
+.song-details {
+  position: absolute;
+  margin-left: 20px;
+
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
 .song-title {
-  text-align: center;
-  padding: 0.4em;
   text-transform: capitalize;
+  font-weight: bold;
 }
 .song-artist {
-  text-align: center;
-  padding: 0.4em;
-  text-transform: uppercase;
+  text-transform: lowercase;
+  font-style: italic;
+}
+.control-and-range {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .controlPad {
   display: flex;
@@ -44,21 +74,43 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  flex-flow: column;
+  width: 80%;
+  margin: 50px;
+}
+
+input[type="range"] {
+  width: 500px;
+}
+.theButtons {
+  display: flex;
+  width: 100%;
 }
 button {
   margin: 0.5em;
   height: 2.5em;
+  border-radius: 25%;
 }
 .prev,
 .next {
   background-color: yellow;
   border: 1px solid green;
+  flex-grow: 0.5;
 }
-.play-pause {
+.fa-play,
+.fa-pause {
   background-color: green;
   border: 1px solid brown;
+  flex-grow: 3;
 }
 .stop {
   background-color: red;
   border: 1px solid brown;
+  flex-grow: 0.5;
+}
+.shuffle,
+.repeat {
+  background-color: white;
+  border: 1px solid green;
+  flex-grow: 0.5;
 }
