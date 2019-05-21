@@ -28,16 +28,21 @@
           <div class="musicRange">
             <input type="range" name="song-range" id="song-range" value="0" min="0" max="100"/>
           </div>
-          <div class="theButtons">
+          <div class="theButtons" id="theButtons">
             <button class="stop fas fa-stop" id="stop" title="Stop"></button>
             <button class="shuffle fas fa-random" id="shuffle" title="Shuffle"></button>
             <button class="prev fas fa-step-backward" id="prev" title="Previous"></button>
             <button class="play-pause fas fa-play" id="play-pause"></button>
             <button class="next fas fa-step-forward" id="next" title="Next"></button>
             <button class="repeat fas fa-redo-alt" id="repeat" title="Repeat"></button>
-            <button class="repeat fas fa-list" id="more" title="more"></button>
+            <button class="empty fas fa-music" id="empty" title="change color"></button>
+          </div>
+          <div class="about-song" id="about-song" style="display:none;">
+            <button class="back-to-pad" id="back-to-pad"></button>
           </div>
         </div>
+        
+
       </div>
       </div>
     </div>
