@@ -19,8 +19,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 60%;
+  height: 70%;
   border: 1px solid greenyellow;
+  border-radius: 8%;
   margin: 1em;
   display: flex;
   flex-wrap: wrap;
@@ -57,6 +58,7 @@
 .song-title {
   text-transform: capitalize;
   font-weight: bold;
+  font-size: 2em;
 }
 .song-artist {
   text-transform: lowercase;
@@ -75,42 +77,61 @@
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  width: 80%;
+  width: 100%;
   margin: 50px;
 }
 
 input[type="range"] {
+  -webkit-appearance: none;
   width: 500px;
+  border-radius: 8px;
+  height: 2px;
+  background-color: yellow;
+  color: red;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: green;
+  border: 1px solid green;
 }
 .theButtons {
   display: flex;
   width: 100%;
+  margin-top: 70px;
 }
 button {
   margin: 0.5em;
-  height: 2.5em;
+  height: 3em;
   border-radius: 25%;
 }
 .prev,
 .next {
   background-color: yellow;
-  border: 1px solid green;
+  border: none;
   flex-grow: 0.5;
 }
 .fa-play,
 .fa-pause {
   background-color: green;
-  border: 1px solid brown;
+  border: none;
   flex-grow: 3;
 }
 .stop {
   background-color: red;
-  border: 1px solid brown;
+  border: none;
   flex-grow: 0.5;
 }
 .shuffle,
-.repeat {
+.repeat{
   background-color: white;
-  border: 1px solid green;
+  border: 1px none;
+  flex-grow: 0.5;
+}
+.empty{
+  background-color: gray;
+  border: none;
   flex-grow: 0.5;
 }
