@@ -135,3 +135,11 @@ button {
   border: none;
   flex-grow: 0.5;
 }
+@media screen and (max-width: 768px){
+  input[type="range"] {
+    width: 250px;
+  }
+  .theButtons {
+    margin-top: 30px;
+  }
+}
