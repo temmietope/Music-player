@@ -1,6 +1,7 @@
-let musicBanner = document.querySelector("#musicBanner");
+const musicBanner = document.querySelector("#musicBanner");
+const musicContainer = document.querySelector("#musicContainer");
 const controlPad = document.querySelector("#controlPad");
-const songDetails = document.querySelector("#song-details")
+const songDetails = document.querySelector("#song-details");
 const songTitle = document.querySelector("#song-title");
 const songArtist = document.querySelector("#song-artist");
 const button = document.querySelector("button");
@@ -11,6 +12,7 @@ const next = document.querySelector("#next");
 const shuffle = document.querySelector("#shuffle");
 const repeat = document.querySelector("#repeat");
 const songRange = document.querySelector("#song-range");
+const empty = document.querySelector("#empty");
 
 let musicPlayer = new Audio();
 let currentSong = 0;
@@ -20,7 +22,7 @@ toRepeat = false;
 //function to load first song
 function playSong(currentSong) {
   let s = songs.tracks[currentSong];
-  songTitle.innerHTML = `<h2>${s.album.title}<h2>`;
+  songTitle.innerHTML = `${currentSong + 1}. ${s.album.title}`;
   songArtist.innerHTML = `<h4>${s.artist.name}<h4>`;
   musicBanner.style.background = `url(${s.album.thumbnail})`;
   musicPlayer.src = s.url;
@@ -102,7 +104,18 @@ repeat.addEventListener("click", function() {
     playNextSong();
   };
 });
+let colors = ["gray", "whitesmoke", "aquamarine", "aliceblue"];
+let counter = 0;
+empty.addEventListener("click", function() {
+  console.log("empty was clicked");
+  musicContainer.style.backgroundColor = colors[counter];
+  counter++;
+  if (counter >= colors.length - 1) {
+    counter = 0;
+  }
 
+  console.log(counter);
+});
 
 musicPlayer.addEventListener("timeupdate", () => {
   timer = Math.round((musicPlayer.currentTime / musicPlayer.duration) * 100);
