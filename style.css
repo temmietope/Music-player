@@ -18,7 +18,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 55%;
+  height: 60%;
   border: 1px solid greenyellow;
   border-radius: 8%;
   margin: 1em;
@@ -107,28 +107,28 @@ input[type="range"]::-webkit-slider-thumb {
 
 .theButtons button {
   margin: 0.5em;
-  height: 60px;
+  height: 30px;
   border: none;
   width: 100px;
   flex: 1;
-  font-size: 60px;
+  font-size: 30px;
   background-color: inherit;
 }
 
 .otherButtons {
   display: flex;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 20px;
   justify-content: center;
   align-items: center;
 }
 .otherButtons button {
   margin: 0.5em;
-  height: 30px;
+  height: 15px;
   border: none;
   width: 50px;
   flex: 1;
-  font-size: 30px;
+  font-size: 15px;
   background-color: inherit;
 }
 
