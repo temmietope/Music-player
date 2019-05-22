@@ -14,12 +14,11 @@
   flex-flow: column;
 }
 .musicBanner {
-  background-image: url("images/audio-device-macro-55800.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 70%;
+  height: 55%;
   border: 1px solid greenyellow;
   border-radius: 8%;
   margin: 1em;
@@ -48,6 +47,7 @@
 .song-details {
   position: absolute;
   margin-left: 20px;
+  flex-wrap: wrap;
 
   -webkit-transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;
@@ -78,7 +78,7 @@
   align-items: center;
   flex-flow: column;
   width: 100%;
-  margin: 50px;
+  margin: 30px;
 }
 
 input[type="range"] {
@@ -100,46 +100,102 @@ input[type="range"]::-webkit-slider-thumb {
 .theButtons {
   display: flex;
   width: 100%;
-  margin-top: 70px;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
 }
-button {
+
+.theButtons button {
   margin: 0.5em;
-  height: 3em;
-  border-radius: 25%;
-}
-.prev,
-.next {
-  background-color: yellow;
+  height: 60px;
   border: none;
-  flex-grow: 0.5;
+  width: 100px;
+  flex: 1;
+  font-size: 60px;
+  background-color: inherit;
 }
-.fa-play,
-.fa-pause {
-  background-color: green;
+
+.otherButtons {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.otherButtons button {
+  margin: 0.5em;
+  height: 30px;
   border: none;
-  flex-grow: 3;
+  width: 50px;
+  flex: 1;
+  font-size: 30px;
+  background-color: inherit;
 }
-.stop {
-  background-color: red;
-  border: none;
-  flex-grow: 0.5;
-}
-.shuffle,
-.repeat{
-  background-color: white;
-  border: 1px none;
-  flex-grow: 0.5;
-}
-.empty{
-  background-color: gray;
-  border: none;
-  flex-grow: 0.5;
-}
-@media screen and (max-width: 768px){
+
+@media screen and (max-width: 768px) {
+  .song-title {
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
   input[type="range"] {
     width: 250px;
   }
   .theButtons {
     margin-top: 30px;
+  }
+  .theButtons {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .theButtons button {
+    margin: 0.5em;
+    height: 30px;
+    border: none;
+    width: 60px;
+    flex: 1;
+    font-size: 30px;
+    background-color: inherit;
+  }
+
+  .otherButtons {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .otherButtons button {
+    margin: 0.5em;
+    height: 15px;
+    border: none;
+    width: 30px;
+    flex: 1;
+    font-size: 15px;
+    background-color: inherit;
+  }
+}
+@media screen and (max-width: 320px) {
+  .theButtons button {
+    margin: 0.5em;
+    height: 30px;
+    border: none;
+    width: 50px;
+    flex: 1;
+    font-size: 30px;
+    background-color: inherit;
+  }
+  .otherButtons button {
+    margin: 0.5em;
+    height: 15px;
+    border: none;
+    width: 18px;
+    flex: 1;
+    font-size: 15px;
+    background-color: inherit;
   }
 }
