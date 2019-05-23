@@ -139,9 +139,7 @@
     font-weight: bold;
     font-size: 1.2em;
   }
-  .theButtons {
-    margin-top: 30px;
-  }
+
   .theButtons {
     display: flex;
     width: 100%;
@@ -153,7 +151,6 @@
   .theButtons button {
     margin: 0.5em;
     height: 30px;
-    border: none;
     width: 60px;
     flex: 1;
     font-size: 30px;
@@ -170,7 +167,6 @@
   .otherButtons button {
     margin: 0.5em;
     height: 15px;
-    border: none;
     width: 30px;
     flex: 1;
     font-size: 15px;
@@ -181,7 +177,6 @@
   .theButtons button {
     margin: 0.5em;
     height: 30px;
-    border: none;
     width: 50px;
     flex: 1;
     font-size: 30px;
@@ -190,7 +185,6 @@
   .otherButtons button {
     margin: 0.5em;
     height: 15px;
-    border: none;
     width: 18px;
     flex: 1;
     font-size: 15px;
