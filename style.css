@@ -132,6 +132,27 @@
   font-size: 15px;
   background-color: inherit;
 }
+.local-music {
+  width: 100%;
+  height: 8vh;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+  border-radius: 20%;
+}
+.play-local-song {
+  margin-top: 15px;
+}
+.play-local-song span {
+  font-size: 1em;
+  font-weight: bolder;
+  font-style: italic;
+}
+.play-local-song input {
+  color: inherit;
+}
 
 @media screen and (max-width: 768px) {
   .song-title {
