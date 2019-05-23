@@ -92,6 +92,7 @@ window.onload = function() {
   playing.className = "fas fa-play";
 };
 
+//eventListeners
 playing.addEventListener("click", pressPlay);
 next.addEventListener("click", playNextSong);
 prev.addEventListener("click", playPreviousSong);
@@ -104,6 +105,7 @@ repeat.addEventListener("click", function() {
     playNextSong();
   };
 });
+
 let colors = ["gray", "whitesmoke", "aquamarine", "aliceblue"];
 let counter = 0;
 empty.addEventListener("click", function() {
@@ -113,9 +115,9 @@ empty.addEventListener("click", function() {
   if (counter >= colors.length - 1) {
     counter = 0;
   }
-
-  console.log(counter);
 });
+
+//to autoplay next song
 musicPlayer.addEventListener("ended", () => {
   playNextSong();
 });
