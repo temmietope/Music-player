@@ -36,12 +36,10 @@ function pressPlay() {
     musicPlayer.play();
     playing.className = "fas fa-pause";
     playing.title = "Pause";
-    console.log("playing");
   } else {
     musicPlayer.pause();
     playing.className = "fas fa-play";
     playing.title = "Play";
-    console.log("pause");
   }
 }
 pressPlay();
@@ -50,10 +48,9 @@ pressPlay();
 function playNextSong() {
   if (toRepeat) {
     currentSong = currentSong - 1;
-    console.log(currentSong);
   }
   currentSong = currentSong + 1;
-  console.log(currentSong);
+
   if (currentSong >= songs.tracks.length) {
     currentSong = 0;
     playSong(currentSong);
@@ -64,7 +61,7 @@ function playNextSong() {
 //to play previous song
 function playPreviousSong() {
   currentSong = currentSong - 1;
-  console.log(currentSong);
+
   if (currentSong < 0) {
     currentSong = songs.tracks.length - 1;
     playSong(currentSong);
@@ -82,7 +79,7 @@ function stopSong() {
 //to shuffle music
 function shuffleMusic() {
   let rand = Math.round(Math.random() * songs.tracks.length);
-  console.log(rand);
+
   currentSong = rand;
   playSong(currentSong);
 }
@@ -109,7 +106,6 @@ repeat.addEventListener("click", function() {
 let colors = ["gray", "whitesmoke", "aquamarine", "aliceblue"];
 let counter = 0;
 empty.addEventListener("click", function() {
-  console.log("empty was clicked");
   musicContainer.style.backgroundColor = colors[counter];
   counter++;
   if (counter >= colors.length - 1) {
@@ -137,4 +133,27 @@ rangeSpace.addEventListener("click", function(e) {
   currentTime = (widthclicked / 100) * musicPlayer.duration;
   musicPlayer.currentTime = currentTime;
   flexible.style.width = `${widthclicked}%`;
+});
+
+const localMusic = document.querySelector("#local-music");
+let fileChosen = document.querySelector("input[name='myFile']");
+
+fileChosen.addEventListener("change", function(e) {
+  let target = e.currentTarget;
+  let file = target.files[0];
+
+  if (target.files && file) {
+    let reader = new FileReader();
+    reader.addEventListener("load", function(e) {
+      musicPlayer.src = e.target.result;
+      songTitle.innerHTML = `${file.name}`;
+      songArtist.innerHTML = ``;
+      musicBanner.style.background = "grey";
+
+      musicPlayer.play();
+      playing.className = "fas fa-pause";
+      playing.title = "Pause";
+    });
+    reader.readAsDataURL(file);
+  }
 });
