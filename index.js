@@ -133,11 +133,7 @@ musicPlayer.addEventListener("timeupdate", () => {
 });
 
 rangeSpace.addEventListener("click", function(e) {
-  console.log(this.offsetWidth);
-  console.log(this.offsetLeft);
-  console.log(e.pageX);
   let widthclicked = ((e.pageX - this.offsetLeft) / this.offsetWidth) * 100;
-  console.log(widthclicked);
   currentTime = (widthclicked / 100) * musicPlayer.duration;
   musicPlayer.currentTime = currentTime;
   flexible.style.width = `${widthclicked}%`;
