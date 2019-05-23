@@ -80,22 +80,23 @@
   width: 100%;
   margin: 30px;
 }
-
-input[type="range"] {
-  -webkit-appearance: none;
-  width: 500px;
-  border-radius: 8px;
-  height: 2px;
-  background-color: yellow;
-  color: red;
+.musicRange {
+  display: flex;
+  height: 10px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  background-color: green;
-  border: 1px solid green;
+.range-space {
+  height: 5px;
+  width: 500px;
+  border: 1px solid gray;
+  background-color: gray;
+}
+.flexible {
+  height: 5px;
+  width: 0%;
+  background-color: red;
 }
 .theButtons {
   display: flex;
@@ -137,9 +138,6 @@ input[type="range"]::-webkit-slider-thumb {
     text-transform: capitalize;
     font-weight: bold;
     font-size: 1.2em;
-  }
-  input[type="range"] {
-    width: 250px;
   }
   .theButtons {
     margin-top: 30px;

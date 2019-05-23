@@ -11,12 +11,12 @@ const stopped = document.querySelector("#stop");
 const next = document.querySelector("#next");
 const shuffle = document.querySelector("#shuffle");
 const repeat = document.querySelector("#repeat");
-const songRange = document.querySelector("#song-range");
+const rangeSpace = document.querySelector("#range-space");
+const flexible = document.querySelector("#flexible");
 const empty = document.querySelector("#empty");
 
 let musicPlayer = new Audio();
 let currentSong = 0;
-songRange.value = 0;
 toRepeat = false;
 
 //function to load first song
@@ -116,18 +116,27 @@ empty.addEventListener("click", function() {
 
   console.log(counter);
 });
-
-musicPlayer.addEventListener("timeupdate", () => {
-  timer = Math.round((musicPlayer.currentTime / musicPlayer.duration) * 100);
-  songRange.value = timer;
-});
-songRange.addEventListener("click", function() {
-  let pos = this.value;
-  songRange.value = pos;
-  currentTime = (pos / 100) * musicPlayer.duration;
-  musicPlayer.currentTime = currentTime;
-  console.log(pos, currentTime);
-});
 musicPlayer.addEventListener("ended", () => {
   playNextSong();
+});
+
+musicPlayer.addEventListener("timeupdate", () => {
+  toMove = Math.round((musicPlayer.currentTime / musicPlayer.duration) * 100);
+  let timer = setInterval(() => {
+    if (toMove === 100) {
+      clearInterval(timer);
+    }
+    flexible.style.width = `${toMove}%`;
+  }, 1000);
+});
+
+rangeSpace.addEventListener("click", function(e) {
+  console.log(this.offsetWidth);
+  console.log(this.offsetLeft);
+  console.log(e.pageX);
+  let widthclicked = ((e.pageX - this.offsetLeft) / this.offsetWidth) * 100;
+  console.log(widthclicked);
+  currentTime = (widthclicked / 100) * musicPlayer.duration;
+  musicPlayer.currentTime = currentTime;
+  flexible.style.width = `${widthclicked}%`;
 });
