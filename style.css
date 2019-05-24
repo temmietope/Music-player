@@ -48,12 +48,6 @@
   position: absolute;
   margin-left: 20px;
   flex-wrap: wrap;
-
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -ms-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
 }
 .song-title {
   text-transform: capitalize;
@@ -150,6 +144,10 @@
   font-weight: bolder;
   font-style: italic;
 }
+.local-music form {
+  text-align: center;
+  margin: auto;
+}
 .play-local-song input {
   color: inherit;
 }
@@ -158,50 +156,79 @@
   .song-title {
     text-transform: capitalize;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1em;
   }
-
-  .theButtons {
+  .musicRange {
     display: flex;
+    height: 10px;
     width: 100%;
-    margin-top: 30px;
     justify-content: center;
     align-items: center;
   }
+  .range-space {
+    height: 5px;
+    max-width: 70vw;
+    border: 1px solid gray;
+    background-color: gray;
+  }
 
+  .theButtons {
+    margin-top: 30px;
+  }
   .theButtons button {
     margin: 0.5em;
     height: 30px;
     width: 60px;
     flex: 1;
     font-size: 30px;
-    background-color: inherit;
   }
-
   .otherButtons {
-    display: flex;
     width: 100%;
     margin-top: 20px;
-    justify-content: center;
-    align-items: center;
   }
   .otherButtons button {
     margin: 0.5em;
     height: 15px;
     width: 30px;
-    flex: 1;
     font-size: 15px;
-    background-color: inherit;
+  }
+  .musicContainer {
+    flex: 0 1 400px;
+    max-width: 80vw;
+    border: 1px solid green;
+    display: flex;
+    flex-flow: column;
+  }
+  .local-music {
+    width: 90%;
+    height: 7vh;
+    border-radius: 10%;
+  }
+  .local-music form {
+    text-align: center;
+    margin: auto;
   }
 }
 @media screen and (max-width: 320px) {
+  .song-details {
+    position: absolute;
+    margin-left: 10px;
+    flex-wrap: wrap;
+  }
+  .song-title {
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 0.8em;
+  }
+  .song-artist {
+    font-size: 0.6em;
+  }
   .theButtons button {
     margin: 0.5em;
     height: 30px;
     width: 50px;
     flex: 1;
     font-size: 30px;
-    background-color: inherit;
   }
   .otherButtons button {
     margin: 0.5em;
@@ -209,6 +236,10 @@
     width: 18px;
     flex: 1;
     font-size: 15px;
-    background-color: inherit;
+  }
+
+  .local-music {
+    height: 7em;
+    width: 100%;
   }
 }
