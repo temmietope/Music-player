@@ -14,6 +14,8 @@ const repeat = document.querySelector("#repeat");
 const rangeSpace = document.querySelector("#range-space");
 const flexible = document.querySelector("#flexible");
 const empty = document.querySelector("#empty");
+const localMusic = document.querySelector("#local-music");
+let fileChosen = document.querySelector("input[name='myFile']");
 
 let musicPlayer = new Audio();
 let currentSong = 0;
@@ -135,8 +137,7 @@ rangeSpace.addEventListener("click", function(e) {
   flexible.style.width = `${widthclicked}%`;
 });
 
-const localMusic = document.querySelector("#local-music");
-let fileChosen = document.querySelector("input[name='myFile']");
+
 
 fileChosen.addEventListener("change", function(e) {
   let target = e.currentTarget;
@@ -148,7 +149,7 @@ fileChosen.addEventListener("change", function(e) {
       musicPlayer.src = e.target.result;
       songTitle.innerHTML = `${file.name}`;
       songArtist.innerHTML = ``;
-      musicBanner.style.background = "grey";
+      musicBanner.style.backgroundImage = "url('./image/devices-electronics-laptop-159376.jpg')";
 
       musicPlayer.play();
       playing.className = "fas fa-pause";
