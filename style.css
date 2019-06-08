@@ -1,3 +1,6 @@
+body{
+  font-family: "Berkshire Swash";
+}
 .wrapper {
   width: 100%;
   display: flex;
@@ -28,8 +31,7 @@
   align-items: flex-end;
   display: flex;
   justify-content: flex-start;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Berkshire Swash";
 }
 .musicBanner img {
   width: 100%;
